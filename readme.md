@@ -85,7 +85,188 @@ h1 {
  - How Flexbox helps center or arrange elements.
  - The importance of classes (.box) and IDs (#header) in styling.
 
+# CSS Examples
 
+🔹 ID Selector (`#id`)
+```html
+<p id="intro">Hello world</p>
+```
+
+```css
+#intro {
+  color: red;
+}
+```
+
+🔹 Class Selector (`.class` with multiple elements)
+
+```html
+<p class="highlight">Important</p>
+<div class="highlight">Also important</div>
+```
+
+```css
+.highlight {
+  font-weight: bold;
+}
+```
+
+🔹 Tag Selector (`tagname`)
+
+```html
+<h1>This is a heading</h1>
+```
+
+```css
+h1 {
+  font-size: 24px;
+}
+```
+
+🔹 Combination Selectors
+
+Tag + Class
+
+```html
+<p class="notice">Note</p>
+```
+
+```css
+p.notice {
+  color: blue;
+}
+```
+
+Tag + ID
+
+
+```html
+<div id="box" class="card"></div>
+```
+
+```css
+div#box {
+  border: 1px solid black;
+}
+```
+
+🔹 Descendant vs Direct Child
+
+Any descendant (`div p`)
+
+```html
+<div>
+  <section><p>Descendant</p></section>
+</div>
+```
+
+```css
+div p {
+  color: green;
+}
+```
+
+Direct child only (`div > p`)
+
+```html
+<div>
+  <p>Child</p>
+  <section><p>Not matched</p></section>
+</div>
+```
+
+```css
+div > p {
+  color: orange;
+}
+```
+
+🔹 Flex vs Grid
+
+Flex: layout in row or column
+
+```html
+<div class="flex-container">
+  <div>1</div><div>2</div><div>3</div>
+</div>
+```
+
+```css
+.flex-container {
+  display: flex;
+  gap: 10px;
+}
+```
+
+Grid: rows and columns
+
+```html
+<div class="grid-container">
+  <div>A</div><div>B</div><div>C</div><div>D</div>
+</div>
+```
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+```
+
+🔹 Basic Form Example
+
+```html
+<form action="/submit" method="POST">
+  <input type="text" name="username" placeholder="Your name">
+  <input type="submit" value="Send">
+</form>
+```
+
+ - ✅ Uses name → data is sent on submit
+ - ❌ id alone does not send data
+
+🔹 Basic index.html with JS + CSS
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Hello</h1>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+🔹 CSS Class vs Inline Style
+
+Class
+
+```html
+<p class="green-text">Hello</p>
+```
+
+```css
+.green-text {
+  color: green;
+}
+```
+
+Inline
+
+```html
+<p style="color: green;">Hello</p>
+```
+
+ - ✅ Inline applies immediately
+ - ❌ Not reusable; avoid in practice
+
+CSS classes and inline styles both apply styles to HTML, but CSS classes are more efficient and maintainable. Classes are defined in a separate stylesheet or `<style>` block, promoting separation of content and presentation. They allow multiple elements to share styling, and changes to a class affect all elements using it, making updates easy. Inline styles, written directly in HTML with the `style` attribute, are useful for quick changes but are not reusable across pages and harder to manage. Overall, CSS classes are better for consistency, scalability, and clean code.
 
 # CI/CD
 
