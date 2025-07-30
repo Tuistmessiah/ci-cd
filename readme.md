@@ -1,7 +1,93 @@
 # Content
 
- - CSS/HTML content
+ - CSS/HTML content to know for quizz
  - How to setup a CI/CD
+
+# HTML / CSS
+
+## 🧠 Understanding the HTML and CSS (For Beginners)
+
+This project contains a basic static webpage designed using HTML and CSS. Studying the structure and styles here will help you prepare for any web basics test, including those related to layout, elements, and styling principles.
+
+## 📄 HTML: The Structure of the Page
+
+The HTML file (`index.html`) is the skeleton of your webpage. It uses tags to define the different parts of the content. Here's what you should know:
+
+Key Elements Used:
+ - `<!DOCTYPE html>`: Declares the document as HTML5.
+ - `<html>`: The root element of the page.
+ - `<head>`: Contains metadata like the page `<title>` and link to CSS.
+ - `<body>`: Everything visible to the user goes here.
+
+Inside the <body>:
+
+ - `<header>`: Usually holds the logo or top navigation.
+ - `<main>`: The main content area. You’ll typically use:
+   - `<section>`: A part of the page, often with a heading.
+   - `<h1>`, `<h2>`...: Headings (bigger = more important).
+   - `<p>`: Paragraphs.
+   - `<ul>`, `<li>`: Lists.
+   - `<button>` or `<a>`: Clickable elements.
+ - `<footer>`: Content at the bottom of the page.
+
+Example:
+
+```html
+<main>
+  <h1>Welcome</h1>
+  <p>This is a simple page.</p>
+</main>
+```
+
+## 🎨 CSS: The Design of the Page
+
+CSS (Cascading Style Sheets) controls how the HTML looks. It’s linked in the <head> of the HTML:
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+Basic CSS Concepts Used:
+
+ - Selectors (`h1`, `.class`, `#id`): Tell the browser what to style.
+ - Colors and Fonts:
+   - color: Changes text color.
+   - background-color: Changes background.
+   - font-family, font-size: Control typography.
+ - Box Model:
+   - padding: Space inside the element.
+   - margin: Space outside the element.
+   - border: The edge around an element.
+
+ - Flexbox:
+   - Used for responsive layouts (auto-adjust to screen size).
+   - display: flex, justify-content, and align-items are important properties.
+
+Example:
+
+```css
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+```
+
+## 🧪 What You Should Understand to Score Well:
+ - How HTML tags create structure.
+ - How to link CSS to HTML.
+ - The purpose of semantic tags: header, main, footer, etc.
+ - Basic CSS properties for layout and color.
+ - How Flexbox helps center or arrange elements.
+ - The importance of classes (.box) and IDs (#header) in styling.
+
+
+
+# CI/CD
 
 ## 🌐 CI/CD Public Website Template
 

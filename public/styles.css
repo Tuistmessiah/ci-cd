@@ -2,12 +2,23 @@ body {
     font-family: sans-serif;
     padding: 20px;
   }
+
   nav {
     margin-bottom: 1em;
   }
+
+  section > h2 {
+    color: red;
+  }
+
   button {
     margin-right: 1em;
   }
+
+#css {
+  /* background-color: red; */
+}
+
   .hidden {
     display: none;
   }
@@ -38,5 +49,6 @@ body {
   }
   .first-child:first-child {
     font-weight: bold;
+    background-color: blue;
   }
   
