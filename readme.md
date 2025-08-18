@@ -1,11 +1,20 @@
 # Content
 
- - CSS/HTML content to know for quizz
+ - CSS/HTML/Fetch API content to know for quiz
  - How to setup a CI/CD
 
-# HTML / CSS
+### 🧪 What You Should Understand to Score Well:
+ - How HTML tags create structure.
+ - How to link CSS to HTML.
+ - The purpose of semantic tags: header, main, footer, etc.
+ - Basic CSS properties for layout and color.
+ - How Flexbox helps center or arrange elements.
+ - The importance of classes (.box) and IDs (#header) in styling.
+ - How to use `fetch` and handle its response
 
-## 🧠 Understanding the HTML and CSS (For Beginners)
+# HTML / CSS / Fetch API
+
+### 🧠 Understanding the HTML and CSS (For Beginners)
 
 This project contains a basic static webpage designed using HTML and CSS. Studying the structure and styles here will help you prepare for any web basics test, including those related to layout, elements, and styling principles.
 
@@ -77,15 +86,7 @@ h1 {
 }
 ```
 
-## 🧪 What You Should Understand to Score Well:
- - How HTML tags create structure.
- - How to link CSS to HTML.
- - The purpose of semantic tags: header, main, footer, etc.
- - Basic CSS properties for layout and color.
- - How Flexbox helps center or arrange elements.
- - The importance of classes (.box) and IDs (#header) in styling.
-
-# CSS Examples
+### CSS Examples
 
 🔹 ID Selector (`#id`)
 ```html
@@ -267,6 +268,105 @@ Inline
  - ❌ Not reusable; avoid in practice
 
 CSS classes and inline styles both apply styles to HTML, but CSS classes are more efficient and maintainable. Classes are defined in a separate stylesheet or `<style>` block, promoting separation of content and presentation. They allow multiple elements to share styling, and changes to a class affect all elements using it, making updates easy. Inline styles, written directly in HTML with the `style` attribute, are useful for quick changes but are not reusable across pages and harder to manage. Overall, CSS classes are better for consistency, scalability, and clean code.
+
+
+## JavaScript Fetch API
+
+### 🌐 Understanding fetch() and REST API Calls
+
+The `fetch()` function is the modern way to make HTTP requests in JavaScript. It's used to interact with REST APIs and retrieve data from servers.
+
+### 📡 What fetch() Returns
+
+The `fetch()` function returns a **Promise that resolves to a Response object**. This is important to understand:
+
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => {
+    // response is a Response object, not JSON data
+    console.log(response.status); // HTTP status code
+    console.log(response.ok); // boolean indicating success
+    return response.json(); // Parse JSON data
+  })
+  .then(data => {
+    // data is the parsed JSON object
+    console.log(data);
+  });
+```
+
+### 🔄 Steps to Handle JSON REST API Response
+
+There are typically **3 main steps** required:
+
+1. **Call fetch() with the endpoint URL**
+2. **Call response.json() on the fetch response** 
+3. **Use .then() to process the resulting data**
+
+```javascript
+// Step 1: Call fetch with URL
+fetch('https://api.example.com/users')
+  .then(response => {
+    // Step 2: Parse JSON from response
+    return response.json();
+  })
+  .then(data => {
+    // Step 3: Process the data
+    console.log(data);
+    // Use the data (e.g., update DOM, store in variables)
+  });
+```
+
+### 🛠️ Making REST Calls from JavaScript
+
+The primary approach is using the **asynchronous fetch() function**:
+
+```javascript
+// GET request
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+// POST request
+fetch('https://api.example.com/submit', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ name: 'John', age: 30 })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+```
+
+### 📝 Parsing JSON Response
+
+The correct way to parse JSON from a fetch() response is using **response.json()**:
+
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => {
+    // ✅ Correct way
+    return response.json();
+    
+    // ❌ Incorrect ways:
+    // response.getJSON() - doesn't exist
+    // response.parse() - doesn't exist  
+    // JSON.parse(response) - response is an object, not a string
+  })
+  .then(data => {
+    // data is now a JavaScript object
+    console.log(data);
+  });
+```
+
+### 🧠 Key Points to Remember:
+
+- `fetch()` returns a Promise → Response object
+- Use `response.json()` to parse JSON data
+- Always use `.then()` to handle the asynchronous response
+- The Response object contains status, headers, and methods like `.json()`
+- `response.json()` also returns a Promise, so you need another `.then()`
+
 
 # CI/CD
 
